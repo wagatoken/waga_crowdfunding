@@ -1,0 +1,3 @@
+[submodule "WAGA_Crowdfunding/lib/forge-std"]
+	path = WAGA_Crowdfunding/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
