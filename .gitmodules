@@ -1,6 +1,0 @@
-[submodule "WAGA_Crowdfunding/lib/forge-std"]
-	path = WAGA_Crowdfunding/lib/forge-std
-	url = https://github.com/foundry-rs/forge-std
-[submodule "WAGA_Crowdfunding/lib/openzeppelin-contracts"]
-	path = WAGA_Crowdfunding/lib/openzeppelin-contracts
-	url = https://github.com/OpenZeppelin/openzeppelin-contracts
