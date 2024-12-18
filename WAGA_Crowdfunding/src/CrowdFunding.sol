@@ -53,11 +53,11 @@ contract CrowdFunding is ReentrancyGuard {
             deadline: _deadline,
             amountCollected: 0,
             image: _image,
-            donators: new address , // Initialize as an empty array
-          ations: new uint256  // Initialize as an empty array
+            donators: new address[](0),
+            donations: new uint256 [](0) 
         });
 
-   campaignExists = true;
+        campaignExists = true;
 
         emit CampaignCreated(_owner, _target, _deadline);
     }
@@ -87,6 +87,11 @@ contract CrowdFunding is ReentrancyGuard {
         require(sent, "Failed to withdraw funds.");
 
         emit FundsWithdrawn(amount);
+    }
+
+    function getCurrentFundAmount() public view returns (uint256) {
+        require(campaignExists, "No campaign exists.");
+        return campaign.amountCollected;
     }
 
     function getDonators() public view returns (address[] memory, uint256[] memory) {
