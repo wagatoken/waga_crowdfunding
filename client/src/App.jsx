@@ -17,9 +17,7 @@ function App() {
     chain: defineChain(11155111),
     address: "0xd760415480813B3c5e9975005652f0287589ba05",
   });
-
-  console.log("her first choice:", contract)
-  
+ 
   const { mutate: sendTx, data: transactionResult } =
     useSendTransaction();
   
@@ -39,13 +37,18 @@ function App() {
   });
   
   return(
-    <div>
-      <p className="text-yellow-800 transform uppercase">sicccccccc</p>
-      <ConnectButton client={client} />
-      <br/><br/><br/>
-      <button onClick={onClick}>CLICK</button>
-      <div>{data}</div>
+    <>
+    <div className="m-3">
+      <div>
+      </div>
+        <ConnectButton client={client} />
+        
+        <button className="border bg-yellow-400 p-3 rounded" onClick={onClick}>
+          Token-Symbol
+        </button>
+        <div>{data}</div>
     </div>
+    </>
   )
 }
 
