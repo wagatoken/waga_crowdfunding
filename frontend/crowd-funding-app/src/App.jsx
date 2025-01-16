@@ -1,10 +1,13 @@
-function App() {
+import Nav from "./components/Nav";
+import Hero from "./sections/Hero";
 
+function App() {
   return (
-    <div className="flex">
-      <h1>This is the crowd funding frontend</h1>
+    <div className="min-h-screen">
+      <Nav />
+      <Hero />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
