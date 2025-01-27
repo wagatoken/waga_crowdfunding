@@ -6,6 +6,10 @@ export default {
       fontFamily: {
         dela: ['"Dela Gothic One"', "sans-serif"],
       },
+      colors: {
+        canaryYellow: ["#FFFE40"],
+        cinder: ["#0E0E18"],
+      },
     },
   },
   plugins: [],
