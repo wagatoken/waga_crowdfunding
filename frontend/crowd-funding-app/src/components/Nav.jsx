@@ -1,23 +1,98 @@
 import { discord, telegram, twitter } from "../assets/icons/";
+import { useState } from "react";
+
 const Nav = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <nav className="flex  pr-12 pl-28 py-9 bg-[#11121A] text-white  ">
-      <div className="flex flex-grow  space-x-10  ">
-        <div className=" font-dela text-[#FBFF3A] text-4xl ">WAGA</div>
-        <div className="flex justify-between px-4 space-x-10 font-semibold mt-2 text-nowrap text-xl">
-          <a href="#">Roadmap</a>
-          <a href="#">Tokenomics</a>
-          <a href="#">Our Process</a>
+    <nav className="bg-cinder-0 text-white w-full ">
+      <div className="flex items-center justify-between px-6 py-4 md:px-12 md:py-6 indent-16">
+        <div className="flex items-center space-x-10">
+          <div className="font-dela text-canaryYellow-0 text-4xl">WAGA</div>
+          <div className="hidden md:flex space-x-10 font-semibold text-xl">
+            <a href="#" className="hover:text-canaryYellow-0">
+              Roadmap
+            </a>
+            <a href="#" className="hover:text-canaryYellow-0">
+              Tokenomics
+            </a>
+            <a href="#" className="hover:text-canaryYellow-0">
+              Our Process
+            </a>
+          </div>
+        </div>
+        <div className="flex items-center space-x-5">
+          <div className="hidden md:flex space-x-5">
+            <img
+              src={telegram}
+              className="object-contain w-[30px]"
+              alt="Telegram"
+            />
+            <img
+              src={discord}
+              className="object-contain w-[30px]"
+              alt="Discord"
+            />
+            <img
+              src={twitter}
+              className="object-contain w-[30px]"
+              alt="Twitter"
+            />
+          </div>
+          <button className="bg-canaryYellow-0 text-cinder-0 font-semibold p-2 rounded-lg">
+            Connect Wallet
+          </button>
+          <button
+            className="md:hidden text-canaryYellow-0 focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            ☰
+          </button>
         </div>
       </div>
-      <div className=" ml-auto flex space-x-4 mr-4">
-        <img src={telegram} className="object-contain w-[30px]" />
-        <img src={discord} className="object-contain w-[30px]" />
-        <img src={twitter} className="object-contain w-[30px]" />
-        <button className=" bg-[#FBFF3A] text-[#11121A]  font-semibold font-sans p-2 rounded-lg text-nowrap">
-          Connect Wallet
-        </button>
-      </div>
+
+      {isMenuOpen && (
+        <div className="md:hidden flex flex-col items-start space-y-4 px-6 py-4 bg-cinder-0">
+          <a
+            href="#"
+            className="text-lg font-semibold hover:text-canaryYellow-0"
+          >
+            Roadmap
+          </a>
+          <a
+            href="#"
+            className="text-lg font-semibold hover:text-canaryYellow-0"
+          >
+            Tokenomics
+          </a>
+          <a
+            href="#"
+            className="text-lg font-semibold hover:text-canaryYellow-0"
+          >
+            Our Process
+          </a>
+          <div className="flex space-x-5 mt-4">
+            <img
+              src={telegram}
+              className="object-contain w-[30px]"
+              alt="Telegram"
+            />
+            <img
+              src={discord}
+              className="object-contain w-[30px]"
+              alt="Discord"
+            />
+            <img
+              src={twitter}
+              className="object-contain w-[30px]"
+              alt="Twitter"
+            />
+          </div>
+          <button className="w-full bg-canaryYellow-0 text-cinder-0 font-semibold p-2 rounded-lg">
+            Connect Wallet
+          </button>
+        </div>
+      )}
     </nav>
   );
 };
