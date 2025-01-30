@@ -2,3 +2,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .custom-pagination {
+    @apply flex justify-center mt-5; /* Centers and adds spacing */
+  }
+  .custom-pagination .swiper-pagination-bullet {
+    @apply bg-[#F8FFE8] h-3 w-12 rounded-full;
+  }
+  .custom-pagination .swiper-pagination-bullet-active {
+    @apply bg-canaryYellow-0 h-3 w-12;
+  }
+}
+.nav-container {
+  @apply flex pt-10 pl-28 pr-10  pb-3;
+}
