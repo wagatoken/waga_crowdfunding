@@ -1,5 +1,10 @@
+import { useActiveAccount, useConnectModal } from "thirdweb/react";
 import { downloadPng } from "../assets/icons";
+import { client } from "../client";
+import { wallets } from "../client";
 const Hero = () => {
+  const { connect } = useConnectModal();
+  const account = useActiveAccount();
   return (
     <div className="flex bg-[#11121A] h-screen text-white pr-12 pl-28 pt-10">
       <div>
@@ -37,8 +42,12 @@ const Hero = () => {
             <button className="block bg-[#F9E727] text-[#11121A]  font-bold p-2 rounded-lg text-nowrap text-sm w-11/12">
               SUPPORT US {">>"}
             </button>
-            <button className="block bg-[#1A1B25] mt-5 rounded-lg w-11/12 p-3 text-xs font-bold">
-              CONNECT WALLET {">>"}
+            <button
+              disabled={!!account}
+              className="block bg-[#1A1B25] text-white mt-5 rounded-lg w-11/12 p-3 text-xs font-bold"
+              onClick={() => connect({ client, wallets, size: "compact" })}
+            >
+              {account ? "CONNECTED" : "CONNECT WALLET >>"}
             </button>
           </div>
         </div>

@@ -1,5 +1,8 @@
 import { discord, telegram, twitter } from "../assets/icons/";
+import { ConnectButton } from "thirdweb/react";
 import { useState } from "react";
+import { client } from "../client";
+import { wallets } from "../client";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,9 +42,18 @@ const Nav = () => {
               alt="Twitter"
             />
           </div>
-          <button className="bg-canaryYellow-0 text-cinder-0 font-semibold p-2 rounded-lg">
-            Connect Wallet
-          </button>
+          <div className="indent-0 hidden lg:flex">
+            <ConnectButton
+              client={client}
+              wallets={wallets}
+              connectModal={{ title: "Connecting to WAGA" }}
+              connectButton={{
+                label: "Connect Wallet",
+                className: "!bg-canaryYellow-0  !text-cinder-0 ",
+              }}
+            />
+          </div>
+
           <button
             className="md:hidden text-canaryYellow-0 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -88,9 +100,15 @@ const Nav = () => {
               alt="Twitter"
             />
           </div>
-          <button className="w-full bg-canaryYellow-0 text-cinder-0 font-semibold p-2 rounded-lg">
-            Connect Wallet
-          </button>
+          <ConnectButton
+            client={client}
+            wallets={wallets}
+            connectModal={{ title: "Connecting to WAGA" }}
+            connectButton={{
+              label: "Connect Wallet",
+              className: "!bg-canaryYellow-0  !text-cinder-0 !w-full ",
+            }}
+          />
         </div>
       )}
     </nav>
