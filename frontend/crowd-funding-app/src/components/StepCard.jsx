@@ -1,3 +1,4 @@
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
@@ -40,40 +41,54 @@ const steps = [
 
 const StepCard = () => {
   return (
-    <Swiper
-      modules={[Pagination, Navigation]}
-      pagination={{ clickable: true, el: ".custom-pagination" }}
-      // navigation={true}
-      grabCursor={true}
-      centeredSlides={true}
-      loop={true}
-      className="relative"
-    >
-      {steps.map((step) => {
-        return (
-          <SwiperSlide key={step.step}>
-            {/* {step.step + step.title + step.content} */}
-            <div className=" pt-8 pl-5 ">
-              <div className="text-white font-dela pb-3">STEP {step.step}:</div>
-              <div className="text-[#E2FEA5] text-3xl front-dela font-bold pb-1 ">
-                {step.title}:
-              </div>
-              <div className="text-white text-sm mb-10 pr-72">
-                {step.content}
-              </div>
-              <div className="text-white flex justify-end pr-20">
-                Next Step &rarr;
-              </div>
-            </div>
-          </SwiperSlide>
-        );
-      })}
+<div className="relative">
+  <Swiper
+    modules={[Pagination, Navigation]}
+    pagination={{ clickable: true, el: ".custom-pagination" }}
+    navigation={{
+      nextEl: ".custom-next",
+      prevEl: ".custom-prev",
+    }}
+    grabCursor={true}
+    centeredSlides={true}
+    loop={true}
+    className="relative"
+  >
+    {steps.map((step) => (
+      <SwiperSlide key={step.step}>
+        <div className="pt-8 px-4 md:px-20">
+          <div className="text-white font-dela pb-3">STEP {step.step}:</div>
+          <div className="text-[#E2FEA5] text-2xl md:text-3xl font-dela font-bold pb-1">
+            {step.title}
+          </div>
+          <div className="text-white text-sm md:text-base mb-6 md:mb-10">
+            {step.content}
+          </div>
+          <div className="text-white flex justify-end">
+            <button className="text-white font-semibold hover:text-[#E2FEA5] transition">
+              Next Step &rarr;
+            </button>
+          </div>
+        </div>
+      </SwiperSlide>
+    ))}
 
-      {/* <div className="swiper-button-prev"></div> */}
-      {/* <div className="swiper-button-next"></div> */}
-      <div className="custom-pagination"></div>
-    </Swiper>
+    <div className="custom-pagination"></div>
+  </Swiper>
+
+  {/* Custom Navigation Buttons - Moved Outside */}
+  <div className="swiper-button-next custom-next"></div>
+  <div className="swiper-button-prev custom-prev"></div>
+
+  <style jsx>{`
+    .swiper-button-next, .swiper-button-prev {
+      color: #E2FEA5 !important; /* Force yellow color */
+    }
+  `}</style>
+</div>
+
   );
 };
 
 export default StepCard;
+
