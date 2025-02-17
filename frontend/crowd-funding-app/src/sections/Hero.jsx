@@ -32,7 +32,6 @@ const Hero = () => {
           </button>
         </div>
       </div>
-
       {/* Right Section (TokenLaunchCard) */}
       <TokenLaunchCard connect={connect} account={account} />
     </div>

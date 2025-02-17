@@ -14,7 +14,7 @@ const Roadmap = () => {
       {/* Partners Section */}
       <section className="bg-coffeegreen py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-white text-left mb-12">
+          <h2 className="text-2xl font-bold text-white text-center mb-12">
             OUR PARTNERS
           </h2>
           <div className="flex flex-wrap justify-center md:justify-between items-center gap-8">
