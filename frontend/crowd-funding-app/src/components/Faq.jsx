@@ -48,7 +48,7 @@ const Faq = () => {
           FAQ
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-col space-y-2 max-w-5xl mx-auto">
           {faqData.map((faq, index) => (
             <div
               key={index}
@@ -76,10 +76,16 @@ const Faq = () => {
                   </h3>
                   <div
                     className={`transition-all duration-300 ease-in-out overflow-hidden
-                      ${openFaqs[index] ? "max-h-48 opacity-100 mt-3" : "max-h-0 opacity-0"}
+                      ${
+                        openFaqs[index]
+                          ? "max-h-48 opacity-100 mt-3"
+                          : "max-h-0 opacity-0"
+                      }
                     `}
                   >
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                    <p className="text-gray-700 leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
                 </div>
               </div>
