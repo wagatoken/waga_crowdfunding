@@ -13,7 +13,11 @@ const HowToBuy = () => {
           </div>
           {/* Coffee Beans Image */}
           <div className="w-full md:flex-1 bg-[#0F2C23] rounded-3xl flex justify-center items-center">
-            <img src={twoCoffeeBeans} alt="Two Coffee Beans" className="w-44 md:w-56" />
+            <img
+              src={twoCoffeeBeans}
+              alt="Two Coffee Beans"
+              className="w-44 md:w-56"
+            />
           </div>
         </div>
 
@@ -22,7 +26,10 @@ const HowToBuy = () => {
           {/* Left Text Section */}
           <div className="flex-1 flex flex-col items-center gap-6">
             <div className="bg-[#0F2C23] rounded-3xl text-white text-sm md:text-base p-6 leading-relaxed w-full text-center md:text-left">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
             </div>
             <button className="py-3 w-full bg-canaryYellow-0 rounded-full text-2xl font-bold">
               Connect
