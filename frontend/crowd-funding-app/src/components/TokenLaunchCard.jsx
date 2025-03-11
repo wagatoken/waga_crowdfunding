@@ -1,40 +1,73 @@
-import {
-  checkMark,
-  doubleAngleBracketsBlack,
-  doubleAngleBracketsWhite,
-} from "../assets/icons";
+import { useState } from "react";
+import { Settings, ChevronDown } from "lucide-react";
 
-const TokenLaunchCard = () => {
+function TokenLaunchCard() {
+  const [fromAmount, setFromAmount] = useState("0.0");
+  const [toAmount, setToAmount] = useState("0.0");
+
+  const handleFromAmountChange = (e) => {
+    setFromAmount(e.target.value);
+    setToAmount(e.target.value);
+  };
+
+  const handleToAmountChange = (e) => {
+    setToAmount(e.target.value);
+    setFromAmount(e.target.value);
+  };
+
   return (
-    <div className="flex justify-center w-full md:w-3/6 pt-3">
-      <div className="bg-black text-white w-full md:w-2/3 rounded-2xl pt-8 px-6 text-center md:text-left">
-        <h1 className="text-2xl font-bold">INITIAL TOKEN LAUNCH</h1>
-        <p className="text-sm font-light mt-1">
-          Support WAGA By Purchasing Some WGTN
-        </p>
-
-        <div className="text-[#FBFF3A] mt-5 space-y-2">
-          <p className="flex items-center justify-center md:justify-start gap-2">
-            <img src={checkMark} className="w-5 h-5" /> Connect your wallet
-          </p>
-          <p className="flex items-center justify-center md:justify-start gap-2">
-            <img src={checkMark} className="w-5 h-5" /> Swap Some ETH into WGTN
-          </p>
-        </div>
-
-        <div className="mt-8 space-y-4">
-          <button className="flex items-center justify-center gap-2 bg-[#F9E727] text-[#11121A] font-bold p-3 rounded-lg text-sm w-full">
-            SUPPORT US
-            <img src={doubleAngleBracketsBlack} className="w-4 h-4" />
-          </button>
-          <button className="flex items-center justify-center gap-2 bg-[#1A1B25] rounded-lg w-full p-3 text-xs font-bold">
-            CONNECT WALLET
-            <img src={doubleAngleBracketsWhite} className="w-4 h-4" />
+    <div className=" bg-green-950 flex items-center justify-center ml-52 md:mb-32 shadow-2xl shadow-canaryYellow-0 ">
+      <div className="bg-[#144939] rounded-3xl p-6 w-full max-w-md">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-canaryYellow-0 text-2xl font-bold">Buy</h1>
+          <button className="text-canaryYellow-0">
+            <Settings size={24} />
           </button>
         </div>
+
+        <p className="text-gray-300 mb-4">Swap any token to WGTN</p>
+
+        {/* From input */}
+        <div className="bg-[#0f2c23] rounded-xl p-3 mb-2">
+          <label className="text-gray-400 text-sm mb-1 block">From</label>
+          <input
+            type="text"
+            value={fromAmount}
+            onChange={handleFromAmountChange}
+            className="bg-transparent text-white text-xl w-full focus:outline-none"
+          />
+        </div>
+
+        {/* Arrow down */}
+        <div className="flex justify-center my-2">
+          <div className="text-canaryYellow-0">
+            <ChevronDown size={24} />
+          </div>
+        </div>
+
+        {/* To input */}
+        <div className="bg-[#0f2c23] rounded-xl p-3 mb-6">
+          <label className="text-gray-400 text-sm mb-1 block">To</label>
+          <div className="flex justify-between items-center">
+            <input
+              type="text"
+              value={toAmount}
+              onChange={handleToAmountChange}
+              className="bg-transparent text-white text-xl w-full focus:outline-none"
+            />
+            <button className="flex items-center text-canaryYellow-0">
+              WGTN <ChevronDown size={16} className="ml-1" />
+            </button>
+          </div>
+        </div>
+
+        {/* Buy button */}
+        <button className="bg-[#0f2c23] text-canaryYellow-0 w-full py-4 rounded-xl font-bold text-lg hover:bg-[#1b4e3e] transition-colors ">
+          Buy
+        </button>
       </div>
     </div>
   );
-};
+}
 
 export default TokenLaunchCard;
