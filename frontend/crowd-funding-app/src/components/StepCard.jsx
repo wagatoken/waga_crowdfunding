@@ -40,49 +40,37 @@ const steps = [
 
 const StepCard = () => {
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      <Swiper
-        modules={[Pagination, Navigation]}
-        pagination={{ clickable: true, el: ".custom-pagination" }}
-        navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
-        grabCursor={true}
-        centeredSlides={true}
-        loop={true}
-        className="relative"
-      >
-        {steps.map((step) => (
+    <Swiper
+      modules={[Pagination, Navigation]}
+      pagination={{ clickable: true, el: ".custom-pagination" }}
+      // navigation={true}
+      grabCursor={true}
+      centeredSlides={true}
+      loop={true}
+      className="relative"
+    >
+      {steps.map((step) => {
+        return (
           <SwiperSlide key={step.step}>
-            <div className="p-6 md:p-10 text-center md:text-left">
-              <div className="text-white font-dela pb-2 text-lg md:text-xl">
-                STEP {step.step}:
+            {/* {step.step + step.title + step.content} */}
+            <div className=" pt-8 pl-5 ">
+              <div className="text-white font-dela pb-3">STEP {step.step}:</div>
+              <div className="text-[#E2FEA5] text-3xl front-dela font-bold pb-1 ">
+                {step.title}:
               </div>
-              <div className="text-[#E2FEA5] text-2xl md:text-3xl font-bold pb-2">
-                {step.title}
-              </div>
-              <div className="text-white text-sm md:text-base mb-6 md:mb-10">
+              <div className="text-white text-sm mb-10 pr-72">
                 {step.content}
+              </div>
+              <div className="text-white flex justify-end pr-20">
+                Next Step &rarr;
               </div>
             </div>
           </SwiperSlide>
-        ))}
-        <div className="custom-pagination mt-4"></div>
-      </Swiper>
+        );
+      })}
 
-      {/* Custom Navigation Buttons */}
-      <button className=" custom-prev absolute top-1/2 -left-6 md:left-0 transform -translate-y-1/2 text-2xl text-[#E2FEA5]">
-        ❮
-      </button>
-      <button className=" absolute top-1/2 -right-6 md:right-0 transform -translate-y-1/2 text-2xl text-[#E2FEA5]">
-        ❯
-      </button>
-
-      <style jsx>{`
-        .swiper-button-next,
-        .swiper-button-prev {
-          color: #E2FEA5 !important;
-        }
-      `}</style>
-    </div>
+      <div className="custom-pagination"></div>
+    </Swiper>
   );
 };
 
