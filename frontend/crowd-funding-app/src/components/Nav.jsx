@@ -7,7 +7,6 @@ import { wallets } from "../client";
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Lock body scrolling when the mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -20,14 +19,22 @@ const Nav = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-cinder-0 text-white w-full relative">
-      <div className="flex items-center justify-between px-6 py-4 md:px-12 md:py-6">
-        <div className="flex items-center space-x-10">
-          <div className="font-dela text-canaryYellow-0 text-4xl">WAGA</div>
+    <nav className="bg-[#0f2c23] text-white w-full relative shadow-xl shadow-canaryYellow-0">
+      <div className="flex flex-wrap items-center justify-between px-6 py-4 md:px-12 md:pr-32 md:pl-24 pt-6  ">
+        <div className="flex items-center">
+          <div className="font-dela text-canaryYellow-0 text-4xl mr-4 min-[1085px]:mr-10">
+            WAGA
+          </div>
           <div className="hidden md:flex space-x-8 font-semibold text-xl">
-            <a href="#" className="hover:text-canaryYellow-0">Roadmap</a>
-            <a href="#" className="hover:text-canaryYellow-0">Tokenomics</a>
-            <a href="#" className="hover:text-canaryYellow-0">Our Process</a>
+            <a href="#" className="hover:text-canaryYellow-0">
+              Roadmap
+            </a>
+            <a href="#" className="hover:text-canaryYellow-0">
+              Tokenomics
+            </a>
+            <a href="#" className="hover:text-canaryYellow-0">
+              Our Process
+            </a>
           </div>
         </div>
         <div className="flex items-center space-x-5">
@@ -36,14 +43,15 @@ const Nav = () => {
             <img src={discord} className="w-[30px]" alt="Discord" />
             <img src={twitter} className="w-[30px]" alt="Twitter" />
           </div>
-          <div className="hidden lg:flex">
+          <div>
             <ConnectButton
               client={client}
               wallets={wallets}
               connectModal={{ title: "Connecting to WAGA" }}
               connectButton={{
                 label: "Connect Wallet",
-                className: "!bg-canaryYellow-0 !text-cinder-0 p-2 rounded-lg",
+                className:
+                  "!bg-canaryYellow-0 !text-cinder-0 !h-10 !p-1 !font-semibold rounded-lg",
               }}
             />
           </div>
@@ -67,13 +75,25 @@ const Nav = () => {
         >
           ✕
         </button>
-        <a href="#" className="text-white hover:text-canaryYellow-0" onClick={() => setIsMenuOpen(false)}>
+        <a
+          href="#"
+          className="text-white hover:text-canaryYellow-0"
+          onClick={() => setIsMenuOpen(false)}
+        >
           Roadmap
         </a>
-        <a href="#" className="text-white hover:text-canaryYellow-0" onClick={() => setIsMenuOpen(false)}>
+        <a
+          href="#"
+          className="text-white hover:text-canaryYellow-0"
+          onClick={() => setIsMenuOpen(false)}
+        >
           Tokenomics
         </a>
-        <a href="#" className="text-white hover:text-canaryYellow-0" onClick={() => setIsMenuOpen(false)}>
+        <a
+          href="#"
+          className="text-white hover:text-canaryYellow-0"
+          onClick={() => setIsMenuOpen(false)}
+        >
           Our Process
         </a>
         <div className="flex space-x-5">
