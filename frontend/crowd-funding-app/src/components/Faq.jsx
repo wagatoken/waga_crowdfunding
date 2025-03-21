@@ -54,8 +54,8 @@ const Faq = () => {
               key={index}
               className={`bg-white transform transition-all duration-300 ease-in-out
                 hover:shadow-xl relative group rounded-lg p-6 sm:p-8 cursor-pointer
-                ${openFaqs[index] ? "shadow-xl" : "shadow-md"}
-                ${index % 2 === 1 ? "md:translate-x-2" : "md:-translate-x-2"}
+               
+
               `}
               onClick={() => toggleFaq(index)}
             >

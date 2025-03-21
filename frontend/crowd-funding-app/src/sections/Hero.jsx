@@ -1,7 +1,5 @@
 import { useActiveAccount, useConnectModal } from "thirdweb/react";
 import { downloadPng } from "../assets/icons";
-// import { client } from "../client";
-// import { wallets } from "../client";
 import TokenLaunchCard from "../components/TokenLaunchCard";
 
 const Hero = () => {
@@ -9,35 +7,37 @@ const Hero = () => {
   const account = useActiveAccount();
 
   return (
-    <div className="flex flex-col md:flex-row bg-[#0f2c23] text-white px-6 md:px-28 pt-24 relative md:h-[75vh]">
+    <div className="flex flex-col lg:flex-row bg-[#0f2c23] text-white px-6 sm:px-12 lg:px-28 pt-24 relative lg:h-[75vh]">
       {/* Left Section */}
-      <div className="flex flex-col md:w-1/2 space-y-6 text-center md:text-left">
-        <h1 className="text-[#FBFF3A] text-3xl md:text-5xl font-bold tracking-wider md:leading-normal">
-          Empowering Coffee&apos;s <br /> Future
+      <div className="flex flex-col lg:w-1/2 space-y-6 text-center lg:text-left items-center lg:items-start">
+        <h1 className="text-[#FBFF3A] text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider leading-snug lg:leading-normal">
+          Empowering Coffee&apos;s <br className="hidden lg:block" /> Future
         </h1>
 
-        <p className="text-xl md:text-2xl  mt-6 md:mt-10">
+        <p className="text-lg sm:text-xl lg:text-2xl mt-4 sm:mt-6 lg:mt-10 max-w-lg">
           WAGA tokenizes coffee on blockchain, ensuring transparency, supporting
           farmers, and connecting global buyers.
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 mt-6">
-          <button className="inline-flex items-center border-2 gap-4 border-yellow-100 rounded-md py-3 px-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6">
+          <button className="inline-flex items-center border-2 gap-3 sm:gap-4 border-yellow-100 rounded-md py-3 px-5 sm:px-6 hover:bg-yellow-100 hover:text-black transition">
             <img
               src={downloadPng}
-              className="object-contain w-6"
+              className="object-contain w-5 sm:w-6"
               alt="Download Icon"
             />
             Download White Paper
           </button>
-          <button className="bg-[#FBFF3A] text-black rounded-lg px-6 py-3 font-semibold">
+          <button className="bg-[#FBFF3A] text-black rounded-md px-5 sm:px-6 py-3 font-semibold hover:bg-yellow-200 transition">
             SUPPORT US
           </button>
         </div>
       </div>
       {/* Right Section (TokenLaunchCard) */}
-      <TokenLaunchCard connect={connect} account={account} />
+      <div className="flex justify-center lg:justify-end w-full lg:w-1/2  mt-20 mb-10">
+        <TokenLaunchCard connect={connect} account={account} />
+      </div>
     </div>
   );
 };

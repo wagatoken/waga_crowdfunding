@@ -16,7 +16,7 @@ function TokenLaunchCard() {
   };
 
   return (
-    <div className=" bg-green-950 flex items-center justify-center ml-52 md:mb-32 shadow-2xl shadow-canaryYellow-0 ">
+    <div className=" flex items-center justify-center ml-5 md:mb-32 shadow-2xl  flex-shrink-0 ">
       <div className="bg-[#144939] rounded-3xl p-6 w-full max-w-md">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-canaryYellow-0 text-2xl font-bold">Buy</h1>

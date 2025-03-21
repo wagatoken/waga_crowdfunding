@@ -19,13 +19,13 @@ const Nav = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-[#0f2c23] text-white w-full relative shadow-xl shadow-canaryYellow-0">
-      <div className="flex flex-wrap items-center justify-between px-6 py-4 md:px-12 md:pr-32 md:pl-24 pt-6  ">
+    <nav className="bg-[#0f2c23] text-white w-full relative ">
+      <div className="flex items-center justify-between px-6 py-4 md:px-12 md:pr-32 min-[1050px]:pl-24 pt-6">
         <div className="flex items-center">
           <div className="font-dela text-canaryYellow-0 text-4xl mr-4 min-[1085px]:mr-10">
             WAGA
           </div>
-          <div className="hidden md:flex space-x-8 font-semibold text-xl">
+          <div className="hidden min-[1010px]:flex space-x-8 font-semibold text-xl">
             <a href="#" className="hover:text-canaryYellow-0">
               Roadmap
             </a>
@@ -38,7 +38,7 @@ const Nav = () => {
           </div>
         </div>
         <div className="flex items-center space-x-5">
-          <div className="hidden md:flex space-x-5">
+          <div className="hidden min-[1010px]:flex space-x-5">
             <img src={telegram} className="w-[30px]" alt="Telegram" />
             <img src={discord} className="w-[30px]" alt="Discord" />
             <img src={twitter} className="w-[30px]" alt="Twitter" />
@@ -56,7 +56,7 @@ const Nav = () => {
             />
           </div>
           <button
-            className="md:hidden text-canaryYellow-0 focus:outline-none text-2xl"
+            className="min-[1000px]:hidden text-canaryYellow-0 focus:outline-none text-2xl"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             ☰

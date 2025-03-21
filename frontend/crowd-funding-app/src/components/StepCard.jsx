@@ -52,16 +52,13 @@ const StepCard = () => {
       {steps.map((step) => {
         return (
           <SwiperSlide key={step.step}>
-            {/* {step.step + step.title + step.content} */}
-            <div className=" pt-8 pl-5 ">
+            <div className="pt-8 pl-5 max-w-md mx-auto">
               <div className="text-white font-dela pb-3">STEP {step.step}:</div>
-              <div className="text-[#E2FEA5] text-3xl front-dela font-bold pb-1 ">
+              <div className="text-[#E2FEA5] text-3xl font-bold pb-1">
                 {step.title}:
               </div>
-              <div className="text-white text-sm mb-10 pr-72">
-                {step.content}
-              </div>
-              <div className="text-white flex justify-end pr-20">
+              <div className="text-white text-sm mb-10">{step.content}</div>
+              <div className="text-white flex justify-end">
                 Next Step &rarr;
               </div>
             </div>
