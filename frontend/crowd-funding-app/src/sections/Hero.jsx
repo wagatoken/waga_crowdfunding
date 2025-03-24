@@ -21,10 +21,14 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6">
-          <button className="inline-flex items-center border-2 gap-3 sm:gap-4 border-yellow-100 rounded-md py-3 px-5 sm:px-6 hover:bg-yellow-100 hover:text-black transition">
+
+          <button 
+            className="inline-flex items-center border-2 gap-3 sm:gap-4 border-yellow-100 rounded-md py-3 px-5 hover:bg-[#14392d] active:scale-95 transition-all"
+            onClick={() => window.open('https://hackmd.io/@yl2u-hpeQU-iSu-PwJJHUw/r1HuiikM1g', '_blank')}
+          >
             <img
               src={downloadPng}
-              className="object-contain w-5 sm:w-6"
+              className="object-contain w-5 "
               alt="Download Icon"
             />
             Download White Paper

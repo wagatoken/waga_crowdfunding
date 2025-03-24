@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
+import { useRef } from "react";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -39,11 +40,19 @@ const steps = [
 ];
 
 const StepCard = () => {
+  const swiperRef = useRef(null);
+
+  const goToNextSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext(); 
+    }
+  };
+
   return (
     <Swiper
+      ref={swiperRef} 
       modules={[Pagination, Navigation]}
       pagination={{ clickable: true, el: ".custom-pagination" }}
-      // navigation={true}
       grabCursor={true}
       centeredSlides={true}
       loop={true}
@@ -58,7 +67,10 @@ const StepCard = () => {
                 {step.title}:
               </div>
               <div className="text-white text-sm mb-10">{step.content}</div>
-              <div className="text-white flex justify-end">
+              <div
+                className="text-white flex justify-end cursor-pointer"
+                onClick={goToNextSlide} 
+              >
                 Next Step &rarr;
               </div>
             </div>
