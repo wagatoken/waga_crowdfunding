@@ -25,7 +25,7 @@ function TokenLaunchCard() {
           </button>
         </div>
 
-        <p className="text-gray-300 mb-4">Swap any token to WGTN</p>
+        <p className="text-gray-300 mb-4">Swap ETH to WGTN</p>
 
         {/* From input */}
         <div className="bg-[#0f2c23] rounded-xl p-3 mb-2">
